@@ -15,7 +15,7 @@ inFile="$inputsPath"/"geneCounts_cleaned_PA42_v4.1.csv"
 outDir="$inputsPath"/glmAnalysis
 mkdir $outDir
 
-#Perform DE analysis using glmLRT in edgeR 
+#Perform DE analysis using glmQLF in edgeR 
 Rscript glmQLF_edgeR_pvalues.r "$inFile" 1 24 "$designPath"
 
 #Move produced tables

@@ -1,6 +1,6 @@
 #!/usr/bin/env Rscript
-#Usage: Rscript glmQLF_edgeR_pvalues.r countsFile startColumn endColumn factorGroupingFile FDR
-#Usage Ex: Rscript glmQLF_edgeR_pvalues.r cleaned.csv 1 24 expDesign_Olympics_GRP1.csv 0.10
+#Usage: Rscript glmQLF_edgeR_pvalues.r countsFile startColumn endColumn factorGroupingFile
+#Usage Ex: Rscript glmQLF_edgeR_pvalues.r cleaned.csv 1 24 expDesign_Olympics_GRP1.csv
 #R script to perform statistical analysis of gene count tables using edgeR GLM
 
 #Install edgeR and statmod, this should only need to be done once
