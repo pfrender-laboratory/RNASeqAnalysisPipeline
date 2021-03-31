@@ -18,22 +18,17 @@ args = commandArgs(trailingOnly=TRUE)
 
 #Import gene count data
 countsTable <- read.csv(file=args[1], row.names="gene")[ ,args[2]:args[3]]
-#head(countsTable)
 #Import grouping factor
 targets <- read.csv(file=args[4], row.names="sample")
-#Retrieve input FDR cutoff
-fdrCut=as.numeric(args[5])
 
 #Setup a design matrix
 group <- factor(paste(targets$treatment,targets$genotype,sep="."))
-#cbind(targets,Group=group)
 #Create DGE list object
 list <- DGEList(counts=countsTable,group=group)
 colnames(list) <- targets$sample
 
 #Retain genes only if it is expressed at a minimum level
 keep <- filterByExpr(list)
-summary(keep)
 list <- list[keep, , keep.lib.sizes=FALSE]
 
 #Use TMM normalization to eliminate composition biases
