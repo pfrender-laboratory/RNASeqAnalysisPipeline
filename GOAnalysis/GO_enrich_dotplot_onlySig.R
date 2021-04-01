@@ -7,29 +7,29 @@ library(ggplot2)
 library(gridExtra)
 
 #Read in data on GO terms (BP, MF, and CC) for each genotype 
-Y05_BP_GO_terms <- read.csv('Y05_all_genes/Y05_all_genes_BP_GO_terms.csv', row.names = 1)
-Y05_MF_GO_terms <- read.csv('Y05_all_genes/Y05_all_genes_MF_GO_terms.csv', row.names = 1)
-Y05_CC_GO_terms <- read.csv('Y05_all_genes/Y05_all_genes_CC_GO_terms.csv', row.names = 1)
+Y05_BP_GO_terms <- read.csv('/Users/bryanmichalek/Documents/Notre_Dame/Spring 2021/Pfrender/GO_Custom_Annotations_Results/Y05_all_genes/Y05_all_genes_BP_GO_terms.csv', row.names = 1)
+Y05_MF_GO_terms <- read.csv('/Users/bryanmichalek/Documents/Notre_Dame/Spring 2021/Pfrender/GO_Custom_Annotations_Results/Y05_all_genes/Y05_all_genes_MF_GO_terms.csv', row.names = 1)
+Y05_CC_GO_terms <- read.csv('/Users/bryanmichalek/Documents/Notre_Dame/Spring 2021/Pfrender/GO_Custom_Annotations_Results/Y05_all_genes/Y05_all_genes_CC_GO_terms.csv', row.names = 1)
 
-Y023_BP_GO_terms <- read.csv('Y023_all_genes/Y023_all_genes_BP_GO_terms.csv', row.names = 1)
-Y023_MF_GO_terms <- read.csv('Y023_all_genes/Y023_all_genes_MF_GO_terms.csv', row.names = 1)
-Y023_CC_GO_terms <- read.csv('Y023_all_genes/Y023_all_genes_CC_GO_terms.csv', row.names = 1)
+Y023_BP_GO_terms <- read.csv('/Users/bryanmichalek/Documents/Notre_Dame/Spring 2021/Pfrender/GO_Custom_Annotations_Results/Y023_all_genes/Y023_all_genes_BP_GO_terms.csv', row.names = 1)
+Y023_MF_GO_terms <- read.csv('/Users/bryanmichalek/Documents/Notre_Dame/Spring 2021/Pfrender/GO_Custom_Annotations_Results/Y023_all_genes/Y023_all_genes_MF_GO_terms.csv', row.names = 1)
+Y023_CC_GO_terms <- read.csv('/Users/bryanmichalek/Documents/Notre_Dame/Spring 2021/Pfrender/GO_Custom_Annotations_Results/Y023_all_genes/Y023_all_genes_CC_GO_terms.csv', row.names = 1)
 
-E05_BP_GO_terms <- read.csv('E05_all_genes/E05_all_genes_BP_GO_terms.csv', row.names = 1)
-E05_MF_GO_terms <- read.csv('E05_all_genes/E05_all_genes_MF_GO_terms.csv', row.names = 1)
-E05_CC_GO_terms <- read.csv('E05_all_genes/E05_all_genes_CC_GO_terms.csv', row.names = 1)
+E05_BP_GO_terms <- read.csv('/Users/bryanmichalek/Documents/Notre_Dame/Spring 2021/Pfrender/GO_Custom_Annotations_Results/E05_all_genes/E05_all_genes_BP_GO_terms.csv', row.names = 1)
+E05_MF_GO_terms <- read.csv('/Users/bryanmichalek/Documents/Notre_Dame/Spring 2021/Pfrender/GO_Custom_Annotations_Results/E05_all_genes/E05_all_genes_MF_GO_terms.csv', row.names = 1)
+E05_CC_GO_terms <- read.csv('/Users/bryanmichalek/Documents/Notre_Dame/Spring 2021/Pfrender/GO_Custom_Annotations_Results/E05_all_genes/E05_all_genes_CC_GO_terms.csv', row.names = 1)
 
-R2_BP_GO_terms <- read.csv('R2_all_genes/R2_all_genes_BP_GO_terms.csv', row.names = 1)
-R2_MF_GO_terms <- read.csv('R2_all_genes/R2_all_genes_MF_GO_terms.csv', row.names = 1)
-R2_CC_GO_terms <- read.csv('R2_all_genes/R2_all_genes_CC_GO_terms.csv', row.names = 1)
+R2_BP_GO_terms <- read.csv('/Users/bryanmichalek/Documents/Notre_Dame/Spring 2021/Pfrender/GO_Custom_Annotations_Results/R2_all_genes/R2_all_genes_BP_GO_terms.csv', row.names = 1)
+R2_MF_GO_terms <- read.csv('/Users/bryanmichalek/Documents/Notre_Dame/Spring 2021/Pfrender/GO_Custom_Annotations_Results/R2_all_genes/R2_all_genes_MF_GO_terms.csv', row.names = 1)
+R2_CC_GO_terms <- read.csv('/Users/bryanmichalek/Documents/Notre_Dame/Spring 2021/Pfrender/GO_Custom_Annotations_Results/R2_all_genes/R2_all_genes_CC_GO_terms.csv', row.names = 1)
 
-PA_BP_GO_terms <- read.csv('PA_all_genes/PA_all_genes_BP_GO_terms.csv', row.names = 1)
-PA_MF_GO_terms <- read.csv('PA_all_genes/PA_all_genes_MF_GO_terms.csv', row.names = 1)
-PA_CC_GO_terms <- read.csv('PA_all_genes/PA_all_genes_CC_GO_terms.csv', row.names = 1)
+PA_BP_GO_terms <- read.csv('/Users/bryanmichalek/Documents/Notre_Dame/Spring 2021/Pfrender/GO_Custom_Annotations_Results/PA_all_genes/PA_all_genes_BP_GO_terms.csv', row.names = 1)
+PA_MF_GO_terms <- read.csv('/Users/bryanmichalek/Documents/Notre_Dame/Spring 2021/Pfrender/GO_Custom_Annotations_Results/PA_all_genes/PA_all_genes_MF_GO_terms.csv', row.names = 1)
+PA_CC_GO_terms <- read.csv('/Users/bryanmichalek/Documents/Notre_Dame/Spring 2021/Pfrender/GO_Custom_Annotations_Results/PA_all_genes/PA_all_genes_CC_GO_terms.csv', row.names = 1)
 
-Sierra_BP_GO_terms <- read.csv('Sierra_all_genes/Sierra_all_genes_BP_GO_terms.csv', row.names = 1)
-Sierra_MF_GO_terms <- read.csv('Sierra_all_genes/Sierra_all_genes_MF_GO_terms.csv', row.names = 1)
-Sierra_CC_GO_terms <- read.csv('Sierra_all_genes/Sierra_all_genes_CC_GO_terms.csv', row.names = 1)
+Sierra_BP_GO_terms <- read.csv('/Users/bryanmichalek/Documents/Notre_Dame/Spring 2021/Pfrender/GO_Custom_Annotations_Results/Sierra_all_genes/Sierra_all_genes_BP_GO_terms.csv', row.names = 1)
+Sierra_MF_GO_terms <- read.csv('/Users/bryanmichalek/Documents/Notre_Dame/Spring 2021/Pfrender/GO_Custom_Annotations_Results/Sierra_all_genes/Sierra_all_genes_MF_GO_terms.csv', row.names = 1)
+Sierra_CC_GO_terms <- read.csv('/Users/bryanmichalek/Documents/Notre_Dame/Spring 2021/Pfrender/GO_Custom_Annotations_Results/Sierra_all_genes/Sierra_all_genes_CC_GO_terms.csv', row.names = 1)
 
 #--------------------------------------------------------------------------------------------------
 
@@ -161,11 +161,10 @@ p <- p + labs(color = 'Adjusted p-value', size = 'Gene rank')
 
 #Save to file
 final_plot <- p
-ggsave('GOenrich_Dotplot_CustomAnnotation_AllGenes.pdf', plot = final_plot, device = 'pdf')
+ggsave('GOenrich_Dotplot_OnlySig_CustomAnnotation_AllGenes.pdf', plot = final_plot, device = 'pdf')
+file.move(paste(getwd(), '/', "GOenrich_Dotplot_OnlySig_CustomAnnotation_AllGenes.pdf", sep = ''), "/Users/bryanmichalek/Documents/Notre_Dame/Spring 2021/Pfrender/GO_Custom_Annotations_Results/", overwrite = TRUE)
 
 
-
-#same plot but with gray non significant GO terms
 #same plot but with Olympic ANOVA results on x-axis
 #add to each of these plots a column of UV associated genes (from drosophila and red flower beetle)
 

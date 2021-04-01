@@ -16,10 +16,10 @@ library(Rgraphviz)
 genotype_list <- c('Y05', 'Y023', 'E05', 'R2', 'PA', 'Sierra')
 genotype <- genotype_list[1]
 
-DGE_results_table <- read.csv(file = paste('/Users/bryanmichalek/Documents/Notre Dame/Spring 2021/Pfrender/DGE_results/', genotype, '_DGE_results.csv', sep = ''), row.names = 1)
+DGE_results_table <- read.csv(file = paste('/Users/bryanmichalek/Documents/Notre_Dame/Spring 2021/Pfrender/DGE_results/', genotype, '_DGE_results.csv', sep = ''), row.names = 1)
 
 #Read in custom GO annotations
-GOmaps <- readMappings(file='gene2GO_PA42_v4.1_transcripts.map',  sep='\t',  IDsep=',')
+GOmaps <- readMappings(file='/Users/bryanmichalek/Documents/Notre_Dame/Spring 2021/Pfrender/GO_Custom_Annotations_Results/gene2GO_PA42_v4.1_transcripts.map',  sep='\t',  IDsep=',')
 
 #Create named list of all genes (gene universe) and p-values. The gene universe is set to be
 #the list of all genes contained in the gene2GO list of annotated genes.
@@ -134,11 +134,11 @@ printGraph(CC_GO_data, CC_GO_results, firstSigNodes = 5,
 
 
 #Move some files around just to help myself stay organized
-file.move(paste(getwd(), '/', genotype, "_All_Genes_TopSigGO_Density.pdf", sep = ''), paste("/Users/bryanmichalek/Documents/Notre Dame/Spring 2021/Pfrender/GO_Custom_Annotations_Results/", genotype, "_all_genes", sep = ''), overwrite = TRUE)
-file.move(paste(getwd(), '/', genotype, "_all_genes_BP_GO_weight01_5_all.pdf", sep = ''), paste("/Users/bryanmichalek/Documents/Notre Dame/Spring 2021/Pfrender/GO_Custom_Annotations_Results/", genotype, "_all_genes", sep = ''), overwrite = TRUE)
-file.move(paste(getwd(), '/', genotype, "_all_genes_MF_GO_weight01_5_all.pdf", sep = ''), paste("/Users/bryanmichalek/Documents/Notre Dame/Spring 2021/Pfrender/GO_Custom_Annotations_Results/", genotype, "_all_genes", sep = ''), overwrite = TRUE)
-file.move(paste(getwd(), '/', genotype, "_all_genes_CC_GO_weight01_5_all.pdf", sep = ''), paste("/Users/bryanmichalek/Documents/Notre Dame/Spring 2021/Pfrender/GO_Custom_Annotations_Results/", genotype, "_all_genes", sep = ''), overwrite = TRUE)
-file.move(paste(getwd(), '/', genotype, "_all_genes_BP_GO_terms.csv", sep = ''), paste("/Users/bryanmichalek/Documents/Notre Dame/Spring 2021/Pfrender/GO_Custom_Annotations_Results/", genotype, "_all_genes", sep = ''), overwrite = TRUE)
-file.move(paste(getwd(), '/', genotype, "_all_genes_MF_GO_terms.csv", sep = ''), paste("/Users/bryanmichalek/Documents/Notre Dame/Spring 2021/Pfrender/GO_Custom_Annotations_Results/", genotype, "_all_genes", sep = ''), overwrite = TRUE)
-file.move(paste(getwd(), '/', genotype, "_all_genes_CC_GO_terms.csv", sep = ''), paste("/Users/bryanmichalek/Documents/Notre Dame/Spring 2021/Pfrender/GO_Custom_Annotations_Results/", genotype, "_all_genes", sep = ''), overwrite = TRUE)
+file.move(paste(getwd(), '/', genotype, "_All_Genes_TopSigGO_Density.pdf", sep = ''), paste("/Users/bryanmichalek/Documents/Notre_Dame/Spring 2021/Pfrender/GO_Custom_Annotations_Results/", genotype, "_all_genes", sep = ''), overwrite = TRUE)
+file.move(paste(getwd(), '/', genotype, "_all_genes_BP_GO_weight01_5_all.pdf", sep = ''), paste("/Users/bryanmichalek/Documents/Notre_Dame/Spring 2021/Pfrender/GO_Custom_Annotations_Results/", genotype, "_all_genes", sep = ''), overwrite = TRUE)
+file.move(paste(getwd(), '/', genotype, "_all_genes_MF_GO_weight01_5_all.pdf", sep = ''), paste("/Users/bryanmichalek/Documents/Notre_Dame/Spring 2021/Pfrender/GO_Custom_Annotations_Results/", genotype, "_all_genes", sep = ''), overwrite = TRUE)
+file.move(paste(getwd(), '/', genotype, "_all_genes_CC_GO_weight01_5_all.pdf", sep = ''), paste("/Users/bryanmichalek/Documents/Notre_Dame/Spring 2021/Pfrender/GO_Custom_Annotations_Results/", genotype, "_all_genes", sep = ''), overwrite = TRUE)
+file.move(paste(getwd(), '/', genotype, "_all_genes_BP_GO_terms.csv", sep = ''), paste("/Users/bryanmichalek/Documents/Notre_Dame/Spring 2021/Pfrender/GO_Custom_Annotations_Results/", genotype, "_all_genes", sep = ''), overwrite = TRUE)
+file.move(paste(getwd(), '/', genotype, "_all_genes_MF_GO_terms.csv", sep = ''), paste("/Users/bryanmichalek/Documents/Notre_Dame/Spring 2021/Pfrender/GO_Custom_Annotations_Results/", genotype, "_all_genes", sep = ''), overwrite = TRUE)
+file.move(paste(getwd(), '/', genotype, "_all_genes_CC_GO_terms.csv", sep = ''), paste("/Users/bryanmichalek/Documents/Notre_Dame/Spring 2021/Pfrender/GO_Custom_Annotations_Results/", genotype, "_all_genes", sep = ''), overwrite = TRUE)
 
