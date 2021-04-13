@@ -13,10 +13,14 @@ library(ggplot2)
 library(Rgraphviz)
 
 #Load in DGE Results for the genotype
-genotype_list <- c('Y05', 'Y023', 'E05', 'R2', 'PA', 'Sierra')
-genotype <- genotype_list[1]
+genotype_list <- c('Y05', 'Y023', 'E05', 'R2', 'PA', 'Sierra', 'Tribolium_UV')
+genotype <- genotype_list[7]
 
-DGE_results_table <- read.csv(file = paste('/Users/bryanmichalek/Documents/Notre_Dame/Spring 2021/Pfrender/DGE_results/', genotype, '_DGE_results.csv', sep = ''), row.names = 1)
+#For DGE analysis that we did ourself.
+#DGE_results_table <- read.csv(file = paste('/Users/bryanmichalek/Documents/Notre_Dame/Spring 2021/Pfrender/DGE_results/', genotype, '_DGE_results.csv', sep = ''), row.names = 1)
+#For Tribolium UV gene set 
+DGE_results_table <- read.csv(file = '/Users/bryanmichalek/Documents/Notre_Dame/Spring 2021/Pfrender/GO_Custom_Annotations_Results/Tcast_Guo_2019_genePValues.csv', row.names = 2)
+
 
 #Read in custom GO annotations
 GOmaps <- readMappings(file='/Users/bryanmichalek/Documents/Notre_Dame/Spring 2021/Pfrender/GO_Custom_Annotations_Results/gene2GO_PA42_v4.1_transcripts.map',  sep='\t',  IDsep=',')
