@@ -6,23 +6,16 @@
 #Load the libraries
 library(filesstrings)
 library(topGO)
-#library(edgeR)
 library(GO.db)
 library(reshape2)
 library(ggplot2)
 library(Rgraphviz)
 
 #Load in DGE Results for the genotype
-genotype_list <- c('Y05', 'Y023', 'E05', 'R2', 'PA', 'Sierra', 'Tribolium_UV')
+genotype_list <- c('Y05', 'Y023', 'E05', 'R2', 'PA', 'Sierra')
 genotype <- genotype_list[7]
 
-#For DGE analysis that we did ourself.
-#DGE_results_table <- read.csv(file = paste('/Users/bryanmichalek/Documents/Notre_Dame/Spring 2021/Pfrender/DGE_results/', genotype, '_DGE_results.csv', sep = ''), row.names = 1)
-#For Tribolium UV gene set 
-DGE_results_table <- read.csv(file = '/Users/bryanmichalek/Documents/Notre_Dame/Spring 2021/Pfrender/GO_Custom_Annotations_Results/Tcast_Guo_2019_genePValues.csv')
-DGE_results_table <- na.omit(DGE_results_table, cols = DGE_results_table$PValue)
-DGE_results_table <- DGE_results_table[which(!duplicated(DGE_results_table$gene)), ]
-rownames(DGE_results_table) <- DGE_results_table$gene
+DGE_results_table <- read.csv(file = paste('/Users/bryanmichalek/Documents/Notre_Dame/Spring 2021/Pfrender/DGE_results/', genotype, '_DGE_results.csv', sep = ''), row.names = 1)
 
 #Read in custom GO annotations
 GOmaps <- readMappings(file='/Users/bryanmichalek/Documents/Notre_Dame/Spring 2021/Pfrender/GO_Custom_Annotations_Results/gene2GO_PA42_v4.1_transcripts.map',  sep='\t',  IDsep=',')
