@@ -19,8 +19,10 @@ genotype <- genotype_list[7]
 #For DGE analysis that we did ourself.
 #DGE_results_table <- read.csv(file = paste('/Users/bryanmichalek/Documents/Notre_Dame/Spring 2021/Pfrender/DGE_results/', genotype, '_DGE_results.csv', sep = ''), row.names = 1)
 #For Tribolium UV gene set 
-DGE_results_table <- read.csv(file = '/Users/bryanmichalek/Documents/Notre_Dame/Spring 2021/Pfrender/GO_Custom_Annotations_Results/Tcast_Guo_2019_genePValues.csv', row.names = 2)
-
+DGE_results_table <- read.csv(file = '/Users/bryanmichalek/Documents/Notre_Dame/Spring 2021/Pfrender/GO_Custom_Annotations_Results/Tcast_Guo_2019_genePValues.csv')
+DGE_results_table <- na.omit(DGE_results_table, cols = DGE_results_table$PValue)
+DGE_results_table <- DGE_results_table[which(!duplicated(DGE_results_table$gene)), ]
+rownames(DGE_results_table) <- DGE_results_table$gene
 
 #Read in custom GO annotations
 GOmaps <- readMappings(file='/Users/bryanmichalek/Documents/Notre_Dame/Spring 2021/Pfrender/GO_Custom_Annotations_Results/gene2GO_PA42_v4.1_transcripts.map',  sep='\t',  IDsep=',')
