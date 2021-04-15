@@ -38,9 +38,9 @@ list_all_BP_GO_included <- unique(c(UVvsVis_BP_GO_sig$GO.ID, TvsN_BP_GO_sig$GO.I
 
 
     #Add a column labeling the effect to each 
-#UVvsVis_BP_plot_table <- cbind("Effect" = 'UVvsVis', UVvsVis_BP_GO_sig)
-TvsN_BP_plot_table <- cbind("Effect" = 'TvsN', TvsN_BP_GO_sig)
-interaction_BP_plot_table <- cbind("Effect" = 'interaction', interaction_BP_GO_sig)
+#UVvsVis_BP_plot_table <- cbind("Effect" = 'Treatment', UVvsVis_BP_GO_sig)
+#TvsN_BP_plot_table <- cbind("Effect" = 'Tolerance', TvsN_BP_GO_sig)
+interaction_BP_plot_table <- cbind("Effect" = 'Interaction', interaction_BP_GO_sig)
 
 #--------------------------------------------------------------------------------------------------
 
@@ -61,9 +61,9 @@ list_all_MF_GO_included <- unique(c(UVvsVis_MF_GO_sig$GO.ID, TvsN_MF_GO_sig$GO.I
 
 
     #Add a column labeling the effect to each 
-UVvsVis_MF_plot_table <- cbind("Effect" = 'UVvsVis', UVvsVis_MF_GO_sig)
-TvsN_MF_plot_table <- cbind("Effect" = 'TvsN', TvsN_MF_GO_sig)
-interaction_MF_plot_table <- cbind("Effect" = 'interaction', interaction_MF_GO_sig)
+UVvsVis_MF_plot_table <- cbind("Effect" = 'Treatment', UVvsVis_MF_GO_sig)
+TvsN_MF_plot_table <- cbind("Effect" = 'Tolerance', TvsN_MF_GO_sig)
+interaction_MF_plot_table <- cbind("Effect" = 'Interaction', interaction_MF_GO_sig)
 
 #--------------------------------------------------------------------------------------------------
 
@@ -84,14 +84,14 @@ list_all_CC_GO_included <- unique(c(UVvsVis_CC_GO_sig$GO.ID, TvsN_CC_GO_sig$GO.I
 
 
     #Add a column labeling the effect to each 
-UVvsVis_CC_plot_table <- cbind("Effect" = 'UVvsVis', UVvsVis_CC_GO_sig)
-TvsN_CC_plot_table <- cbind("Effect" = 'TvsN', TvsN_CC_GO_sig)
-interaction_CC_plot_table <- cbind("Effect" = 'interaction', interaction_CC_GO_sig)
+UVvsVis_CC_plot_table <- cbind("Effect" = 'Treatment', UVvsVis_CC_GO_sig)
+TvsN_CC_plot_table <- cbind("Effect" = 'Tolerance', TvsN_CC_GO_sig)
+interaction_CC_plot_table <- cbind("Effect" = 'Interaction', interaction_CC_GO_sig)
 
 #--------------------------------------------------------------------------------------------------
 
 #Combine all tables into 1
-all_effect_BP_plot_table <- rbind(TvsN_BP_plot_table, interaction_BP_plot_table)
+all_effect_BP_plot_table <- interaction_BP_plot_table   # UVvsVis_MF_plot_table, TvsN_BP_plot_table weren't included because no significant terms were in the table 
 all_effect_BP_plot_table <- cbind('GO_cat' = 'BP', all_effect_BP_plot_table)
 
 all_effect_MF_plot_table <- rbind(UVvsVis_MF_plot_table, TvsN_MF_plot_table, interaction_MF_plot_table)
@@ -105,7 +105,7 @@ all_effect_plot_table <- rbind(all_effect_BP_plot_table, all_effect_MF_plot_tabl
 #--------------------------------------------------------------------------------------------------
 
 #Make plot
-x_axis_order <- factor(all_effect_plot_table$Effect, levels = c('UVvsVis', 'TvsN', 'interaction'))
+x_axis_order <- factor(all_effect_plot_table$Effect, levels = c('Treatment', 'Tolerance', 'Interaction'))
 facet <- factor(all_effect_plot_table$GO_cat, levels = c('BP', 'MF', 'CC'))
 
 p <- ggplot(data = all_effect_plot_table, aes(x = x_axis_order, y = Term, size = Significant, color = p_adjusted)) 
