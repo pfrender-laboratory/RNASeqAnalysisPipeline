@@ -170,7 +170,7 @@ all_genotype_plot_table <- rbind(all_genotype_BP_plot_table, all_genotype_MF_plo
 #--------------------------------------------------------------------------------------------------
 
 #Make plot
-x_axis_order <- factor(all_genotype_plot_table$Genotype, levels = c('Y05', 'Y023', 'E05', 'R2', 'PA', 'Sierra'))
+x_axis_order <- factor(all_genotype_plot_table$Genotype, levels = c('Sierra', 'Y05', 'Y023', 'E05', 'R2', 'PA'))
 facet <- factor(all_genotype_plot_table$GO_cat, levels = c('BP', 'MF', 'CC'))
 
 p <- ggplot(data = all_genotype_plot_table, aes(x = x_axis_order, y = Term, size = Significant, color = p_adjusted)) 
